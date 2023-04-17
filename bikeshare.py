@@ -33,6 +33,15 @@ def get_filters():
     return city, month, day
 
 def getInput(validList, message, errorMessage):
+    """
+    Get input common function
+    
+    Args:
+        (array) validList - list of valid options
+        (str) message - message request user input
+        (str) errorMessage - error message when user input invalid option 
+    """
+
     while True:        
         value = input(message);
         if value.lower() not in validList:
