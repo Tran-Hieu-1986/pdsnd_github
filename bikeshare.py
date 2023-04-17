@@ -5,6 +5,9 @@ import numpy as np
 CITY_DATA = { 'chicago': 'chicago.csv',
               'new york city': 'new_york_city.csv',
               'washington': 'washington.csv' }
+valid_cities = ['chicago', 'new york city', 'washington']
+valid_months = ['all', 'january', 'february', 'march', 'april', 'may', 'june']
+valid_days = ['all', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday']
 
 def get_filters():
     """
@@ -17,16 +20,12 @@ def get_filters():
     """
     print('Hello! Let\'s explore some US bikeshare data!')
     # TO DO: get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
-   
-    valid_cities = ['chicago', 'new york city', 'washington']
     city = getInput(valid_cities, 'Please enter city (Chicago, New York City, Washington)', 'Please enter the valid city')
     
-    # TO DO: get user input for month (all, january, february, ... , june)
-    valid_months = ['all', 'january', 'february', 'march', 'april', 'may', 'june']
+    # TO DO: get user input for month (all, january, february, ... , june)    
     month = getInput(valid_months, 'Please enter month (all, january, february, ... june)', 'Please enter the valid month')
     
-    # TO DO: get user input for day of week (all, monday, tuesday, ... sunday)
-    valid_days = ['all', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday']
+    # TO DO: get user input for day of week (all, monday, tuesday, ... sunday)    
     day = getInput(valid_days, 'Please enter day of week (all, monday, tuesday, ... sunday)', 'Please enter the valid day of week')
 
     print('-'*40)
