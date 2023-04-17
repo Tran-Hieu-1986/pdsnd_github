@@ -110,9 +110,7 @@ def time_stats(df):
     mostCommonHour = df['hour'].mode()[0]
     print('Most common hour: {}'.format(mostCommonHour))
 
-    print("\nThis took %s seconds." % (time.time() - start_time))
-    print('-'*40)
-
+    printExecutionTime(start_time)
 
 def station_stats(df):
     """Displays statistics on the most popular stations and trip."""
@@ -131,9 +129,7 @@ def station_stats(df):
     # TO DO: display most frequent combination of start station and end station trip
     mostUserCombinationStartEndStation = df.groupby(["Start Station", "End Station"]).size().idxmax()
     print('Most frequent combination of start station and end station trip: {}'.format(mostUserCombinationStartEndStation))
-    print("\nThis took %s seconds." % (time.time() - start_time))
-    print('-'*40)
-
+    printExecutionTime(start_time)
 
 def trip_duration_stats(df):
     """Displays statistics on the total and average trip duration."""
@@ -149,9 +145,7 @@ def trip_duration_stats(df):
     meanTravelTime = df['Trip Duration'].mean()
     print('Mean travel time : {}'.format(meanTravelTime))
 
-    print("\nThis took %s seconds." % (time.time() - start_time))
-    print('-'*40)
-
+    printExecutionTime(start_time)
 
 def user_stats(df):
     """Displays statistics on bikeshare users."""
@@ -174,10 +168,11 @@ def user_stats(df):
         mostRecentBirthYear = df['Birth Year'].max()
         mostCommonBirthYear = df['Birth Year'].mode()[0]
         print('Earliest, most recent and most common year of birth: \n {}, {}, {}'.format(earliestBirthYear,mostRecentBirthYear, mostCommonBirthYear))
+    printExecutionTime(start_time)
 
+def printExecutionTime(start_time):
     print("\nThis took %s seconds." % (time.time() - start_time))
-    print('-'*40)
-
+    print('-'*40)  
 
 def main():
     while True:
